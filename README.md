@@ -10,9 +10,9 @@
 
 * [X]  普通文本消息 `client.Text`
 * [X]  Markdown消息 `client.Markdown`
-* [X]  链接（Link） `client.Link`
-* [X]  ActionCard `client.ActionCard`
-* [X]  FeedCard `client.FeedCard`
+* [X]  链接（Link）消息 `client.Link`
+* [X]  ActionCard消息 `client.ActionCard`
+* [X]  FeedCard消息 `client.FeedCard`
 
 # 示例
 
@@ -32,7 +32,6 @@
       fmt.Println(err)
   }
   ```
-
   ```go
   // 初始化一个采用加签的机器人
   client, err := dingtalk.NewClient(
@@ -84,9 +83,8 @@
       fmt.Printf("%#v", sr)
   }
   ```
-
 * 发送独立跳转的ActionCard类型的消息
-  
+
   注：`content` 支持 `markdown` 格式的消息。
 
   > `dingtalk.Vertical`：按钮垂直排列
@@ -106,8 +104,6 @@
       fmt.Printf("%#v", sr)
   }
   ```
-
-
 * 发送FeedCard类型的消息
 
   > `Title`：单条信息文本
@@ -115,6 +111,7 @@
   > `PicURL`：单条信息后面图片的URL
   > `ActionType: dingtalk.WEB`：表示在单独的浏览器中打开（电脑端APP应用）
   > `ActionType: dingtalk.APP`：表示在APP侧边栏中打开（电脑端APP应用。如果没有指定ActionType，则默认为在app侧边栏中打开）
+  >
 
   ```go
   sr, err := client.FeedCard([]dingtalk.FeedCardLink{
@@ -127,4 +124,3 @@
       fmt.Printf("%#v", sr)
   }
   ```
-
